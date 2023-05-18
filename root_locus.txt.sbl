@@ -1,0 +1,53 @@
+EXPORT ROOT_LOCUS(a,b)
+BEGIN
+  LOCAL NUMER, DENOM, MIDDLEX, MIDDLEY, ROOTS, RES, SCALE;
+
+  RECT();
+
+  NUMER:=a;
+  DENOM:=b;
+  MIDDLEX:=127;
+  MIDDLEY:=64;
+
+  //Draw axis lines
+  LINE_P(0,MIDDLEY,254,MIDDLEY,2);
+  LINE_P(MIDDLEX,0,MIDDLEX,125,2);
+
+  ROOTS:=POLYROOTS(DENOM);
+
+  //Get max real value
+  RES:=0;
+  FOR I FROM 0 TO SIZE(ROOTS) DO
+    IF RE(ROOTS[I])>RES THEN
+      RES:=RE(ROOTS[I]);
+    END;
+  END;
+
+  //Scaling factor for Re
+  SCALE:=231/RES;
+
+  //Get max complex value
+  RES:=0;
+  FOR I FROM 0 TO SIZE(ROOTS) DO
+    IF RE(ROOTS[I])>RES THEN
+      RES:=IM(ROOTS[I]);
+    END;
+  END;
+
+  //Scaling factor for Im
+  IF 114/RES < SCALE THEN
+    SCALE:=114/RES;
+  END;
+
+  //Draw ticks
+  FOR T FROM -10 TO 10 STEP 0.1 DO
+    RES:=MIDDLEX-T*MAGN;
+    LINE_P(RES,MIDDLEY+1,RES,MIDDLEY-1,2);
+    RES:=MIDDLEY-T*MAGN;
+    LINE_P(MIDDLEX+1,RES,MIDDLEX-1,RES,2);
+  END;
+
+
+
+END;
+

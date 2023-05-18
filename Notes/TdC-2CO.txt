@@ -1,0 +1,17 @@
+ΔΘΩαβεθμνπρσφΣω²
+α=arctg(Re/Im)
+cos(α)=sin(α+π/2)
+
+PotIst:Werner sin*sin
+  =VIcos(φ)-VIcos(2ωt+α+β)
+
+RMS:√(1/T*∫a(t)²)
+  Uso sen²=(1-cos(2α))/2
+
+Indutt: il(t)=E/R(1-e^(-R/L*t))
+  Non voglio R sotto, raccolgo
+  Qentr>0
+
+RLC: Tutto Vc(t), divido per LC
+  R/L=2/T, 1/(RL)=ω0²
+  Studio 1/(ω0*T) > 1

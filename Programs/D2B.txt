@@ -1,0 +1,29 @@
+EXPORT D2B(a)
+BEGIN
+
+    LOCAL DEC,BIN,BINREV;
+
+    DEC:=a;
+    BIN:="";
+    BINREV:="";
+
+    WHILE DEC>0 DO
+        
+        IF DEC MOD 2==1 THEN
+            BIN:=BIN+"1";
+        ELSE
+            BIN:=BIN+"0";
+        END;
+        DEC:=INT(DEC/2);
+
+    END;
+    
+    FOR I FROM 1 TO dim(BIN) DO
+        BINREV:=BINREV+mid(BIN,dim(BIN)-I+1,1);
+    END;
+
+    RETURN BINREV;
+
+END;
+
+

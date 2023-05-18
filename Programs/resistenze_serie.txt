@@ -1,0 +1,15 @@
+EXPORT resistenze_parallelo()
+BEGIN
+  LOCAL RECIPROCAL, R, I;
+  I:=1;
+  RECIPROCAL:=0.0;
+  INPUT(R, "R1, 0 to stop");
+  WHILE R>0 DO    
+    RECIPROCAL:=RECIPROCAL +1.0/R;
+    INPUT(R, "R" + string(I) + " 0 to stop");
+  I:=I+1
+  END;
+  IF RECIPROCAL>0 THEN
+    PRINT("Rtot=" + string(1/RECIPROCAL));
+  END;
+END;

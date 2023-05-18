@@ -1,0 +1,91 @@
+EXPORT ROOT_LOCUS(a,b,c,d)
+BEGIN
+
+  LOCAL X,Y,TEMP,MIDDLEX,MIDDLEY,MAGN;
+  LOCAL SUM,NU,S,NI,PREC,NUMER,DENOM;
+  LOCAL ZEROS,POLES;
+  //NUMER:=a;
+  //DENOM:=b;
+  MAGN:=c;
+  PREC:=d;
+  MIDDLEX:=127;
+  MIDDLEY:=62;
+  SUM=0;
+
+  NUMER:=[1,3];
+  DENOM:=[1,-1,-2];
+
+  IF (MAGN==0) THEN
+    SUM:=2/0;
+  END;
+
+  RECT();
+
+  M3:=POLYROOT(NUMER);
+  M4:=POLYROOT(DENOM);
+
+  LINE_P(MIDDLEX,0,MIDDLEX,126,2);
+  LINE_P(0,MIDDLEY,255,MIDDLEY,2);
+
+  L1:=SIZE(M3);
+  ZEROS:=L1(1);
+  FOR R FROM 1 TO ZEROS DO
+    X:=FLOOR(RE(M3(R))*MAGN+MIDDLEX);
+    Y:=FLOOR(IM(M3(R))*MAGN+MIDDLEY);
+    ARC_P(X,Y,2);
+  END;
+
+  L2:=SIZE(M4);
+  POLES:=L2(1);
+  FOR R FROM 1 TO POLES DO
+    X:=FLOOR(RE(M4(R))*MAGN+MIDDLEX);
+    Y:=FLOOR(IM(M4(R))*MAGN+MIDDLEY);
+    PIXON_P(X,Y);
+    FOR J FROM 1 TO 2 STEP 1 DO
+      PIXON_P(X+J, Y+J);
+      PIXON_P(X+J, Y-J);
+      PIXON_P(X-J, Y+J);
+      PIXON_P(X-J, Y-J);
+    END;
+  END;
+
+  FOR R FROM 1 TO 255 DO
+    FOR J FROM 1 TO 126 DO
+      //PIXON_P(R,J);
+      X:=((R-MIDDLEX)/MAGN);
+      Y:=((J-MIDDLEY)/MAGN);
+      //FOR NU FROM 1 TO ZEROS DO
+      //  S:=X+Y*i-M3(NU);
+      //  IF NOT(ABS(S)==0) THEN
+      //    SUM:=SUM+ARG(S);
+      //  END;
+      //END;
+      //FOR NU FROM 1 TO POLES DO
+      //  S:=X+Y*i-M4(NU);
+      //  IF NOT(ABS(S)==0) THEN
+      //    SUM:=SUM-ARG(S);
+      //  END;
+      //END;
+      //SUM:=SUM/p;
+      //IF (((ABS(FRAC(SUM))) < PREC) AND ((INT(ABS(SUM)+0.5))MOD2) == 1)) THEN
+      //  PIXON_P(R,J);
+      //END;
+      SUM:=POLYEVAL(DENOM,X+i*Y);
+      IF (ABS(SUM) > 0) THEN
+        SUM:=POLYEVAL(NUMER, X+i*Y)/SUM;
+      END;
+      SUM:=ARG(SUM)/p;
+      IF SUM < 0 THEN
+        SUM:=SUM+2;
+      END;
+      IF ((FRAC(SUM) < PREC) AND (((INT(SUM+0.5))MOD2) == 1)) THEN
+        PIXON_P(R,J);
+      END;
+    END;
+  END;
+
+  TEXTOUT_P("FINISHED",0,0,1);
+  WAIT(0);
+
+END;
+

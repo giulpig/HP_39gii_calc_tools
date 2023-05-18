@@ -1,0 +1,20 @@
+V=I*R
+
+Partitore di tensione: 
+Vr1= Vtot * R1/(R1+R2+...)
+
+Partitore di corrente:
+Ir1= Itot * (R2+R3+...)/(R1+R2+...)
+   = 1 - Itot * R1/(R1+R2+...)
+
+Corrente di anello:
+-Fisso anelli tutti orari
+-Fisso tensione sui J -> Vj
+-Pongo giro = 0, oppure gen=resist
+
+ 
+Potenziale ai nodi:
+-Fisso corrente sugli E -> Ie
+-Fisso nodo di massa
+-Uso i G = 1/R
+-Correnti entranti = correnti uscenti

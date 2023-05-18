@@ -1,0 +1,19 @@
+ΔΘΩαβεθμνπρσφΣω²⇨
+-ΔQ= C*ΔV
+-Ec= 1/2*C*ΔV²
+-Inv⇨A= -(R2/R1)/(1+(1+R2/R1)/A)
+-Non_inv⇨A= (1+R2/R1)/(1+(1+R2/R1)/A)
+-CMRR= 20log(|Ad|/|Acm|)
+-K⇨+20log|K|,K>0⇨0°,K<0⇨±π
+-pole[1/(s/ω+1)]⇨20↗,-π/2
+-zero[s/ω+1]⇨20↘,+π/2
+-IdL= Kn((Vgs-Vt)Vds-0.5Vds²)
+-IdS= 0.5Kn(Vgs-Vt)²(1+λVds)
+-Vov= Vgs-Vt
+-gm= Kn(Vgs-Vt)
+-r0= (1/λ+Vds)/(Id)≈ 1/(λId)
+-Pdyn= f*C*Vdd²
+-PDP= 0.5C*Vdd²
+-EDP= 0.5C*Vdd²*tp
+- ¬(A+B)= ¬A*¬B
+- ¬(AB)= ¬(¬A+¬B)

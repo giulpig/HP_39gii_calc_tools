@@ -1,0 +1,67 @@
+BANKER
+Ncessit=Max-Assegnati
+-Enough resources
+-Must be declared
+-Secure state
+
+SEMAFORI
+P=>Wait
+V=>Signal
+
+Kernel:
+  -FIH
+  -Dispatcher
+  -Sync
+  -RTC
+
+Condizioni deadlock:
+  -Mutua esclu
+  -Alloc parz
+  -Non sottr
+  -Attesa circ
+
+Swap=>aree di avvicendam
+  contatore referenze
+
+2nd chance=>FIFO, check only when replacing pages
+prepaging not fault
+Initial page fault on pure request
+
+Block index occupation space
+FAT occupation space
+Convert all to byte or bit
+
+Ingore unfitting memory
+
+FAT=>index for each block of disk
+
+n=λ*W
+Lcoda=freqArrivo*TcodaMedio
+
+Tacc=Tseek+1/2*Trot+Ttrasf
+
+d+1 detect
+2d+1 correct
+
+∑Burst/Periodo<=1<=m*(2^(1/m)-1)
+
+R(t)=Nfun(t)/Nfun(t0)
+Q=1-R(t)
+A=MTTF/(MTTF+MTTR)
+
+RAID0=>stripe
+RAID1=>bit mirror
+       double read
+RAID2=>bit stripe
+       parity dedicated
+RAID3=>bit stripe
+       parity dedicated
+       controller detects
+RAID4=>block stripe
+       parity dedicated
+RAID5=>block stri
+       parity distrib
+RAID6=>block stri
+       Reed-Solomon
+       parity distrib
+

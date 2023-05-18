@@ -1,0 +1,16 @@
+EXPORT DRAWX(xrel,yrel,size)
+BEGIN
+  LOCAL X,Y,SIZE,XREL,YREL;
+  SIZE:=size;
+  XREL:=xrel;
+  YREL:=yrel;
+  X:=FLOOR((XREL+Xmax)*127/Xmax);
+  Y:=FLOOR((-YREL+Ymax)*55/Ymax);
+  PIXON_P(X,Y);
+  FOR I FROM 1 TO SIZE STEP 1 DO
+    PIXON_P(X+I, Y+I);
+    PIXON_P(X+I, Y-I);
+    PIXON_P(X-I, Y+I);
+    PIXON_P(X-I, Y-I);
+  END;
+END;

@@ -1,0 +1,65 @@
+ritardo: e^(-st)
+    L[e^(-st)]= t-T
+
+|ΔG/G|= |S(a,G)(a)*Δa/a|
+S(a,W)= S(s)*S(a,G)
+G,C dip da a:
+  S(s)= 1/(1+H*C*G)
+H dip da a:
+  T(s)= 1-S(s)
+ 
+arctg(Im/Re)
+y(t)= |W(jω)|*sin(ωt+<W(jω))
+y(t)= W(s)*U(s)*s,s=0
+
+Gradino(1/s)=> l=0,e=1/(1+Kb)
+Rampa(1/s^2)=> l=1,e=Kb
+
+∫(-∞,+∞)(|w(t)|*dt)=0
+S=> triangolo
+Ta=> muro a sx
+Ts=> semicerchio bucato
+Polo non dom. ritarda
+Zero non dom. sale S
+
+Luogo den-a(s) e num-b(s):
+  Monici
+  Coprimi 
+  Causalita'
+σ=(Σp-Σz)/(Np-Nz)
+
+ωa cerchio
+  >0 se sotto asse
+  indip da T(rit.)
+  mφ=π+<(e^(-jωT)*HCG(j*ωa))
+ωb sx asse Re
+  >0 se sx p.to crit
+  indip da K
+  ma=-20log(K)|HCG(j*ωb)|
+N=P-z
+Ipo:
+  No poli su Im
+  No passare per -1/K
+
+Bode su W=CG
+  W(αs) trasla
+  1+sT
+  1+2ε*s/ω+s^2/ω^2
+  stab se ε>0
+  log(ω), log(1/T)
+
+specs:
+-ErrRegime
+  Kb
+-Sovr= e^(-π/tan(θ))
+  Maxkb/Kb= 1+Sovr
+  mφ=1-0.8S
+-Ts=2.2/ωbp(ba.pass.->√2)
+  ωa=2/T
+
+hw=hg+hc
+Kw=Kg*kc
+  
+
+
+
