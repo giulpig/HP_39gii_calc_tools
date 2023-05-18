@@ -17,3 +17,8 @@
 -EDP= 0.5C*Vdd²*tp
 - ¬(A+B)= ¬A*¬B
 - ¬(AB)= ¬(¬A+¬B)
+
+- micro -6
+- nano -9
+- pico -12
+- femto -15
