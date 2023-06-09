@@ -1,0 +1,26 @@
+EXPORT huffman()
+BEGIN
+  LOCAL LEN,I,J,N1,N2;
+  EDITLIST(L9);
+  LEN:=SIZE(L9);
+  I:=LEN;
+  L8:=L9;
+
+  WHILE I>1 DO
+    L8:=SORT(L8);
+    //Extract 2 smallest numbers
+    N1:=∑LIST(L8*MAKELIST(X==1,X,1,SIZE(L8)));
+    IF SIZE(L8)>1 THEN
+      N2:=∑LIST(L8*MAKELIST(X==2,X,1,SIZE(L8)));
+    ELSE
+      N2:=0;
+    END;
+    IF SIZE(L8)>2 THEN
+      L8:=CONCAT({N1+N2},MAKELIST(∑LIST(L8*MAKELIST(X==Y,X,1,SIZE(L8))),Y,3,SIZE(L8)));
+    ELSE
+      L8:={N1+N2}
+    END;
+    EDITLIST(L8);
+    I:=I-1;
+  END;
+END;

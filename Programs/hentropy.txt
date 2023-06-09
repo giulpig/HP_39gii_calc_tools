@@ -1,0 +1,16 @@
+EXPORT hentropy()
+BEGIN
+  LOCAL LEN,I,PX,RES;
+  EDITLIST(L9);
+  LEN:=SIZE(L9);
+  I:=LEN;
+  RES:=0.0;
+
+  WHILE I>0 DO
+    PX:=∑LIST(L9*MAKELIST(X==I,X,1,SIZE(L9)));
+    RES:=RES-PX*LOG(PX)/LOG(2)
+    I:=I-1;
+  END;
+  PRINT(string(RES));
+  RETURN RES;
+END;
